@@ -12,7 +12,7 @@ torben.noto@gmail.com
 > Several computational models (deconvolution filters, Bayesian, biophysical and generalized linear models) have been proposed to predict the spike trains from calcium currents, but their estimation necessitates making several assumptions about the mechanism underlying the relationship between calcium currents and neuronal spiking. Here we implemented several supervised machine learning algorithms which do not require such assumptions, including logistic regression, gradient boosting, feedforward neural networks, and recurrent neural networks, to predict spike trains from calcium signals and their derivatives. We obtained different sensitivities, specificities and precisions for the algorithms, and particularly in some cases an appreciable amount of specificity, but none of the algorithms were able to isolate the spikes with high precision. We speculate that this might be due to the heavily skewed data, and to variability in the mapping from the calcium trace to the spike train across neurons. 
 > <br>
 > <br>
-> <center><img src = "figures/abstract.png" alt="Fig. 1" class="inline" width="400"/></center>
+> <center><img src = "figures/abstract.png" alt="Fig. 1" class="inline" width="400"/></center><br>
 > Figure 1. Upper: example time series of calcium signal and concurrent spikes.
 >Lower: Sensitivity, specificity and precision of 3 different classifiers: 
 >LR (logistic regression), XGB (gradient boosting) and RNN (recurrent neural nets).
