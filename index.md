@@ -67,5 +67,5 @@ We were not very successful predicting spiking from calcium currents using logis
 </center>
  
 ###### Contributions
-Maite Azcorra-Sedano: FFN, Han Jiang: LR, Torben Noto: XGB, Vivek Sagar: RNN, all: website/final writeup
+Maite Azcorra-Sedano: FFN, Han Jiang: LR, website, Torben Noto: XGB, Vivek Sagar: RNN, all: final writeup
  
