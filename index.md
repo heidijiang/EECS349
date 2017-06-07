@@ -51,7 +51,7 @@ We had also implemented a feedforward neural network. Due to the skewness in the
 #### Results
  
 ##### Logistic Regression
-Logistic Regression obtained a total accuracy of 55.7%, with a true positive/recall rate of 16.54%, true negative rate of 57.3%, and a precision of 1.52%. A chi square test revealed total accuracy to be highly significant relative to chance of 50% χ² (1,155654) = 1030.6, p < .0001. Though this result is highly significant, the logistic regression suffered from an extremely high false positive rate, as can be seen in Figure 4.<br>
+Logistic Regression obtained a total accuracy of 55.7%, with a true positive/recall rate of 16.54%, true negative rate of 57.3%, and a precision of 1.52%. A chi square test revealed total accuracy to be highly significant relative to chance of 50% χ² (1,155654) = 1030.6, p < .0001. Though this result is highly significant, the logistic regression suffered from an extremely high false positive rate, as can be seen in the below figure.<br>
 <center><img src = "figures/calcium_logreg.png" alt="Fig. 4" class="inline" width="400"/></center><br>
 ##### Gradient Boosting
 Gradient boosting achieved a total accuracy of 90% with a true negative rate of 92%,
