@@ -27,12 +27,12 @@ We obtained a dataset of concurrent calcium and spiking recordings from the [Col
  
 After examining the data, we observed that calcium traces obtained using different calcium indicators (OGB-1 vs GCaMP6s) were considerably different, as expected given the distinct dynamics of these indicators, so we restricted our data to the indicator GCaMP6s, as it is the more commonly used of the two. This subset of the data that we used (Fig 1.) contained 781082 time points from 13 cells in the mouse retina, and 9 cells in the mouse visual cortex. Spikes are relatively infrequent in neural recordings, this data containing 24301 total spikes (3% of the total time points). This sparsity of positive examples presented a challenge for further analysis. Furthermore, the sampling rate of the recordings (100 Hz) was such that multiple spikes were sometimes binned into single time point, so we chose to binarize the spiking, as otherwise it would add an additional level of complexity to the classification problem.
 <br><center>
-<img src = "figures/raw_data_example.png" alt="Fig. 2" class="inline" width="600"/></center><br>
+<img src = "figures/raw_data_example.png" alt="Fig. 2" class="inline" width="600"/></center>
 Figure 2. Example calcium (yellow) and spike train (black) traces of 3 cells over time 
  
 Several features were then extracted from the preprocessed calcium signals (Fig 3.). For each time point we calculated the instantaneous calcium signal, all of the calcium signals in a range of one second in the future and past, the derivative and the second derivative of the calcium signal, and a sliding window average of calcium activity over 11 increasingly broad windows. Additionally, we included labels for the brain region that the neurons were recorded from and the cognitive state of the mouse.
 <br><center>
-<img src = "figures/feature_matrix.png" alt="Fig. 3" class="inline" width="600"/></center><br>
+<img src = "figures/feature_matrix.png" alt="Fig. 3" class="inline" width="600"/></center>
 Figure 3. Example of extracted features from calcium signal over time
  
 #### Classification Methods<br>
