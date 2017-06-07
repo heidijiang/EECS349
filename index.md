@@ -58,7 +58,7 @@ We had also implemented a feedforward neural network. Due to the skewness in the
 Logistic Regression obtained a total accuracy of 55.7%, with a true positive/recall rate of 16.54%, true negative rate of 57.3%, and a precision of 1.52%. A chi square test revealed total accuracy to be highly significant relative to chance of 50% χ² (1,155654) = 1030.6, p < .0001. Though this result is highly significant, the logistic regression suffered from an extremely high false positive rate, as can be seen in Figure X.<br>
 <img src = "figures/calcium_logreg.png" alt="Fig. X" class="inline" width="400"/><br>
 ##### Gradient Boosting
-<img src = "figures/xgboost_accuracy_curve.png" alt="Fig. X" class="inline" width="600"/>
+<img src = "figures/xgboost_accuracy_curve.png" alt="Fig. X" class="inline" width="600"/><br>
 ##### RNN
 <img src = "figures/image.png" alt="Fig. X" class="inline" width="600"/><br>
 The total accuracy for RNN was 78.1%. The recall rate (percentage of spikes correctly predicted) was 48.5%. The classification accuracy was significantly different from chance classification (χ² test, p-value < 0.00001). However, RNN had a high false positive rate, evident from the following zoomed in plot.
