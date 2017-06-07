@@ -61,7 +61,7 @@ Logistic Regression obtained a total accuracy of 55.7%, with a true positive/rec
 <img src = "figures/xgboost_accuracy_curve.png" alt="Fig. X" class="inline" width="600"/>
 ##### RNN
 <img src = "figures/image.png" alt="Fig. X" class="inline" width="600"/><br>
-The total accuracy for RNN was 78.1%. The recall rate (percentage of spikes correctly predicted) was 48.5%. However, RNN had a high false positive rate, evident from the following zoomed in plot.
+The total accuracy for RNN was 78.1%. The recall rate (percentage of spikes correctly predicted) was 48.5%. The classification accuracy was significantly different from chance classification (χ² test, p-value < 0.00001). However, RNN had a high false positive rate, evident from the following zoomed in plot.
 <img src = "figures/RNN_image3.png" alt="Fig. X" class="inline" width="600"/><br>
  
 #### Discussion
