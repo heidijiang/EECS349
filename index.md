@@ -46,7 +46,7 @@ We built a gradient boosted decision tree classifier using XGBoost and TensorFlo
 ##### Recurrent and Feedforward Neural Network: <br>
 The idea is that the history of the calcium activity affects the probability of observing a spike. Keeping this in mind, we implemented an LSTM (using TensorFlow) that takes the previous history of two seconds as the input. The RNN has 64 units, that takes inputs in 10 chunks, each chunk containing 20 time points. The data was fed in batches of size 128 and the network was run for 10 epochs for each of the 5 folds in cross validation. We implemented a dropout of 0.8 for regularization. The value of the dropout was chosen to provide the best possible value of recall in the test data. We used cross entropy with logits as the cost function and penalized the network for using a large number of predicted spikes. <br>
  
-We had also implemented a feedforward neural network. Due to the skewness in the data and the inappropriate cost function, it acted like a ZeroR. The code for the neural nets can be found [here](https://github.com/viveksgr/RNN-for-calcium-imaging/tree/master/Scripts). 
+We had also implemented a feedforward neural network. Due to the skewness in the data and the inappropriate cost function, it acted like a ZeroR. The code for the neural nets can be found [here](https://github.com/viveksgr/RNN-for-calcium-imaging/tree/master/Scripts). Finally we tried MATLAB’s feedforward neural network with 10 layers, which did improve prediction accuracy above ZeroR, suggesting that we had to increase the number of hidden layers.
  
 #### Results
  
@@ -61,6 +61,10 @@ Gradient boosting achieved a total accuracy of 90% with a true negative rate of 
 The total accuracy for RNN was 78.1%. The recall rate (percentage of spikes correctly predicted) was 48.5%. However, RNN had a high false positive rate, evident from the following figure. We believe that RNN did not work properly because the model was optimizing the cost function (and hence, both accuracy and recall) by creating a number of false positives. <br>
 <center><img src = "figures/image.png" alt="Fig. 6" class="inline" width="600"/></center>
  
+##### FNN
+The FFN gave a mean squared error of 0.0438 on the test data. This is still a considerable error rate, although it is an improvement from the calcium signals, which have a 0.8806 mean squared error compared to the spiking data. It does a reasonable job at detecting times of high spiking probability, but it still does not allow an accurate prediction of spikes.
+<center><img src = "figures/final.png" alt="Fig. 6" class="inline" width="600"/></center>
+
 #### Discussion
 We were not very successful predicting spiking from calcium currents using logistic regression, FFN, RNN, and gradient boosted trees. The source of most of the errors appeared to be in the data. We realized that there were spikes at time points that didn’t look reasonable. Such low predictive power was obtained due to the sparsity and unreliability of the data. However, despite this imposing challenge our models outperformed chance. By investigating the feature importance scores for the gradient boosted trees we can glean insights into the relationship between calcium imaging and spiking. The feature that provided on average the most information gain and that was split on the most was the brain region that the neuron was recorded from (f60). This supports the idea that calcium dynamics are not identical from one neuron to the next, but may be somewhat specific to cell type and cellular environment. More surprisingly, simultaneous calcium level (f0) was not a particularly useful feature for predicting spiking (Pearson's r value of 0.10): it was the calcium currents preceding and following a given time point which were relied upon in this model (f17-57). Even calcium at times 200 ms before spikes (f53) was a particularly strong contributor to prediction accuracy.<br>
  
